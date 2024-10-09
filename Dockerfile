@@ -30,10 +30,10 @@ ENV PATH=$JAVA_HOME/bin:$PATH
 
 # Télécharger et installer Spark
 ENV SPARK_VERSION=3.5.1
-RUN wget https://dlcdn.apache.org/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz \
-    && tar -xvzf spark-3.5.1-bin-hadoop3.tgz \
-    && mv spark-3.5.1-bin-hadoop3 /opt/spark \
-    && rm spark-3.5.1-bin-hadoop3.tgz
+RUN wget https://dlcdn.apache.org/spark/spark-3.5.3/spark-3.5.3-bin-hadoop3.tgz \
+    && tar -xvzf spark-3.5.3-bin-hadoop3.tgz \
+    && mv spark-3.5.3-bin-hadoop3 /opt/spark \
+    && rm spark-3.5.3-bin-hadoop3.tgz
 
 # Définir les variables d'environnement pour Spark
 ENV SPARK_HOME=/opt/spark

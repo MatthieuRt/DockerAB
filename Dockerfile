@@ -7,7 +7,7 @@ FROM atmoz/sftp
 ENV SFTP_USERS foo:pass:1001
 
 # Exposer le port 22
-EXPOSE 22
+EXPOSE 2222
 
 # Commande par défaut pour démarrer le serveur SFTP
 CMD ["foo:pass"]

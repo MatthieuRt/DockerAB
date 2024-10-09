@@ -45,12 +45,8 @@ WORKDIR /opt/spark
 # Installer Pandas avec pip
 RUN pip3 install --no-cache-dir pandas openpyxl
 
-# Définir le point d'entrée avec les configurations Spark
-CMD ["/opt/spark/bin/spark-shell", 
-     "--conf", "spark.network.timeout=800s", 
-     "--conf", "spark.rpc.message.maxSize=1024", 
-     "--conf", "spark.maxRemoteBlockSizeFetchToMem=2147483134", 
-     "--conf", "spark.driver.maxResultSize=4g"]
+# Copier les fichiers de configuration Spark
+COPY config/spark-defaults.conf $SPARK_HOME/conf/
 
 # Copier les fichiers de configuration Spark (si nécessaire)
 # COPY config/spark-defaults.conf $SPARK_HOME/conf/
